@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Menu, LogOut, Bell, Settings } from "lucide-react"
@@ -127,6 +127,9 @@ export function EnhancedDashboardLayout({ children, menuItems, userRole, userNam
       {/* Mobile Sidebar */}
       <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
         <SheetContent side="left" className="p-0 w-64">
+          <SheetHeader className="sr-only">
+            <SheetTitle>Navigation Menu</SheetTitle>
+          </SheetHeader>
           <SidebarContent />
         </SheetContent>
       </Sheet>
@@ -143,6 +146,9 @@ export function EnhancedDashboardLayout({ children, menuItems, userRole, userNam
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="p-0 w-64">
+                <SheetHeader className="sr-only">
+                  <SheetTitle>Navigation Menu</SheetTitle>
+                </SheetHeader>
                 <SidebarContent />
               </SheetContent>
             </Sheet>
